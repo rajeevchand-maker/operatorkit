@@ -1,0 +1,16 @@
+<svg width="1280" height="640" viewBox="0 0 1280 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="640" fill="#0A1017"/>
+  <rect x="44" y="40" width="1192" height="560" rx="32" fill="#121D2A" stroke="#28405E"/>
+  <text x="92" y="144" fill="#F3EEDF" font-size="52" font-family="Georgia, serif">Operatorkit</text>
+  <text x="92" y="188" fill="#91D8FF" font-size="18" font-family="IBM Plex Mono, Menlo, monospace" letter-spacing="4">VERIFICATION-FIRST AGENT RUNTIME</text>
+  <text x="92" y="268" fill="#D9E7F8" font-size="30" font-family="Georgia, serif">Schema-validated tools, explicit policy tiers, auditable runs, and honest confirmations.</text>
+  <rect x="92" y="340" width="320" height="142" rx="24" fill="#172C40"/>
+  <text x="124" y="392" fill="#91D8FF" font-size="16" font-family="IBM Plex Mono, Menlo, monospace">runtime</text>
+  <text x="124" y="438" fill="#F3EEDF" font-size="24" font-family="Georgia, serif">Bounded tool loop</text>
+  <rect x="448" y="340" width="320" height="142" rx="24" fill="#172C40"/>
+  <text x="480" y="392" fill="#91D8FF" font-size="16" font-family="IBM Plex Mono, Menlo, monospace">safety</text>
+  <text x="480" y="438" fill="#F3EEDF" font-size="24" font-family="Georgia, serif">Verify before confirming</text>
+  <rect x="804" y="340" width="352" height="142" rx="24" fill="#172C40"/>
+  <text x="836" y="392" fill="#91D8FF" font-size="16" font-family="IBM Plex Mono, Menlo, monospace">examples</text>
+  <text x="836" y="438" fill="#F3EEDF" font-size="24" font-family="Georgia, serif">Read, operate, and admin flows</text>
+</svg>

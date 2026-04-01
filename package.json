@@ -1,0 +1,41 @@
+{
+  "name": "operatorkit",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Verification-first runtime for tool-using agents.",
+  "author": "Rajeev Chand <rajeevchand@gmail.com>",
+  "main": "dist/src/server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajeevchand-maker/operatorkit.git"
+  },
+  "scripts": {
+    "dev": "tsx src/server.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/src/server.js",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "check": "npm run typecheck && npm run lint && npm run build",
+    "token": "tsx scripts/generate-token.ts",
+    "verify:demo": "tsx scripts/verify-demo-http.ts",
+    "replay:request": "tsx scripts/replay-request.ts"
+  },
+  "license": "Apache-2.0",
+  "type": "commonjs",
+  "dependencies": {
+    "ajv": "8.18.0",
+    "dotenv": "17.3.1",
+    "fastify": "5.8.4",
+    "jsonwebtoken": "9.0.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.39.4",
+    "@types/jsonwebtoken": "9.0.10",
+    "@types/node": "25.5.0",
+    "eslint": "9.39.4",
+    "globals": "16.5.0",
+    "tsx": "4.21.0",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.57.2"
+  }
+}

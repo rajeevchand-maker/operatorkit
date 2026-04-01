@@ -1,0 +1,5 @@
+{
+  "description": "Create a note and then inspect the queue using operate-level access.",
+  "input": "Create a note to review the launch checklist and then show me the queue.",
+  "policyTier": "operate"
+}

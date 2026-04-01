@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Operatorkit Run Review</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #0c1624;
+        --panel: #132338;
+        --panel-strong: #18304d;
+        --line: rgba(128, 182, 255, 0.14);
+        --ink: #f1f6fb;
+        --muted: #9bb2ca;
+        --accent: #7cd1ff;
+        --success: #63d79f;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background:
+          radial-gradient(circle at top right, rgba(124, 209, 255, 0.16), transparent 24%),
+          linear-gradient(180deg, #0f1c2d 0%, var(--bg) 60%);
+        color: var(--ink);
+        font-family: "Avenir Next", "Segoe UI", sans-serif;
+      }
+
+      main {
+        width: 1440px;
+        min-height: 900px;
+        margin: 0 auto;
+        padding: 52px;
+      }
+
+      .eyebrow,
+      .chip,
+      .label {
+        font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 28px;
+        align-items: stretch;
+      }
+
+      .poster,
+      .stats,
+      .panel {
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        background: linear-gradient(180deg, rgba(19, 35, 56, 0.94), rgba(11, 21, 34, 0.9));
+      }
+
+      .poster {
+        padding: 34px;
+      }
+
+      .eyebrow {
+        margin: 0;
+        font-size: 14px;
+        color: var(--accent);
+      }
+
+      h1 {
+        margin: 18px 0 20px;
+        font-family: "Iowan Old Style", "Palatino Linotype", serif;
+        font-size: 78px;
+        line-height: 0.92;
+        letter-spacing: -0.05em;
+      }
+
+      .lede {
+        max-width: 34rem;
+        margin: 0;
+        color: var(--muted);
+        font-size: 23px;
+        line-height: 1.55;
+      }
+
+      .chip-row {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 24px;
+      }
+
+      .chip {
+        padding: 10px 14px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        color: var(--ink);
+        font-size: 13px;
+        background: rgba(255, 255, 255, 0.02);
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        padding: 22px;
+      }
+
+      .stat {
+        padding: 16px;
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.04);
+      }
+
+      .label {
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      .value {
+        margin-top: 14px;
+        font-family: "Iowan Old Style", "Palatino Linotype", serif;
+        font-size: 38px;
+        letter-spacing: -0.04em;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: 28px;
+        margin-top: 28px;
+      }
+
+      .panel {
+        padding: 24px;
+      }
+
+      h2 {
+        margin: 10px 0 18px;
+        font-family: "Iowan Old Style", "Palatino Linotype", serif;
+        font-size: 34px;
+        letter-spacing: -0.03em;
+      }
+
+      pre {
+        margin: 0;
+        padding: 18px;
+        border-radius: 22px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.03);
+        color: #dce8f5;
+        font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+        font-size: 15px;
+        line-height: 1.6;
+        white-space: pre-wrap;
+      }
+
+      .timeline {
+        display: grid;
+        gap: 14px;
+      }
+
+      .step {
+        padding: 16px 18px;
+        border-radius: 22px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .step-head,
+      .queue-item {
+        display: flex;
+        justify-content: space-between;
+        gap: 14px;
+      }
+
+      .step-head strong,
+      .queue-item strong,
+      .final {
+        font-size: 21px;
+      }
+
+      .muted {
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      .queue {
+        display: grid;
+        gap: 12px;
+        margin-top: 18px;
+      }
+
+      .queue-item {
+        padding: 14px 16px;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        align-items: center;
+      }
+
+      .queue-item span,
+      .verification {
+        color: var(--muted);
+        font-size: 15px;
+      }
+
+      .verification {
+        margin-top: 18px;
+        padding: 16px 18px;
+        border-radius: 18px;
+        border: 1px solid rgba(99, 215, 159, 0.22);
+        background: rgba(99, 215, 159, 0.08);
+      }
+
+      .verification strong {
+        color: var(--success);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <article class="poster">
+          <p class="eyebrow">Operatorkit demo run review</p>
+          <h1>Verification-first runs you can audit at a glance.</h1>
+          <p class="lede">
+            This showcase is built from a real demo request and run artifact. It highlights the
+            permission tier, tool call, verification evidence, and final response without relying on a
+            live model or private connector.
+          </p>
+          <div class="chip-row">
+            <span class="chip">policy tier: read</span>
+            <span class="chip">tool call: list_queue</span>
+            <span class="chip">verification: passed</span>
+          </div>
+        </article>
+
+        <aside class="stats">
+          <div class="stat">
+            <div class="label">run id</div>
+            <div class="value">f1hp</div>
+          </div>
+          <div class="stat">
+            <div class="label">runtime</div>
+            <div class="value">demo model</div>
+          </div>
+          <div class="stat">
+            <div class="label">queue items found</div>
+            <div class="value">3</div>
+          </div>
+          <div class="stat">
+            <div class="label">duration</div>
+            <div class="value">2ms</div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="grid">
+        <article class="panel">
+          <p class="eyebrow">Incoming request</p>
+          <h2>Readable input, explicit policy</h2>
+          <pre>{
+  "input": "Show me what is in the queue right now.",
+  "policyTier": "read",
+  "workspaceFile": "demo/workspaces/default-workspace.json"
+}</pre>
+          <div class="verification">
+            <strong>Verified:</strong> queue query returned 3 items with status evidence attached.
+          </div>
+        </article>
+
+        <article class="panel">
+          <p class="eyebrow">Action timeline</p>
+          <h2>One tool call, one honest answer</h2>
+          <div class="timeline">
+            <div class="step">
+              <div class="step-head">
+                <strong>Decision 1</strong>
+                <span class="chip">tool_calls</span>
+              </div>
+              <p class="muted">
+                The demo policy model chooses <code>list_queue</code> so the runtime can inspect state
+                before it says anything about the queue.
+              </p>
+            </div>
+            <div class="step">
+              <div class="step-head">
+                <strong>Tool execution</strong>
+                <span class="chip">allowed</span>
+              </div>
+              <p class="muted">
+                The call satisfies the <code>read</code> policy tier and returns queue data plus a
+                verification envelope.
+              </p>
+              <div class="queue">
+                <div class="queue-item">
+                  <strong>Finalize social preview assets</strong>
+                  <span>queued · ops</span>
+                </div>
+                <div class="queue-item">
+                  <strong>Review connector retry policy</strong>
+                  <span>in_review · platform</span>
+                </div>
+                <div class="queue-item">
+                  <strong>Publish adaptation docs</strong>
+                  <span>queued · docs</span>
+                </div>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-head">
+                <strong>Decision 2</strong>
+                <span class="chip">final</span>
+              </div>
+              <p class="muted final">“I inspected the queue and verified 3 items in scope.”</p>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+{
+  "description": "Queue a connector-style event with admin-level access.",
+  "input": "Announce the release by sending a connector event.",
+  "policyTier": "admin"
+}

@@ -1,0 +1,5 @@
+{
+  "description": "Inspect the queue with read-level access.",
+  "input": "Show me what is in the queue right now.",
+  "policyTier": "read"
+}

@@ -1,0 +1,35 @@
+{
+  "notes": [
+    {
+      "id": "note_seed_docs",
+      "title": "Review onboarding docs",
+      "body": "Tighten the implementation map before the public release.",
+      "createdBy": "system",
+      "createdAt": "2026-03-20T16:00:00.000Z"
+    }
+  ],
+  "queue": [
+    {
+      "id": "queue_launch_assets",
+      "title": "Finalize social preview assets",
+      "status": "queued",
+      "owner": "ops",
+      "category": "launch"
+    },
+    {
+      "id": "queue_policy_review",
+      "title": "Review connector retry policy",
+      "status": "in_review",
+      "owner": "platform",
+      "category": "runtime"
+    },
+    {
+      "id": "queue_docs",
+      "title": "Publish adaptation docs",
+      "status": "queued",
+      "owner": "docs",
+      "category": "readiness"
+    }
+  ],
+  "connectorOutbox": []
+}
