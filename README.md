@@ -66,6 +66,7 @@ npm run dev
 Useful follow-up commands:
 
 ```bash
+npm run test
 npm run replay:request -- demo/requests/list-queue.json
 npm run replay:request -- demo/requests/create-note-and-queue.json
 npm run replay:request -- demo/requests/send-connector-event.json
@@ -101,7 +102,7 @@ docs/
   Architecture, launch, and safety notes
 
 tests/
-  Reserved for future automated tests
+  Policy, registry, and runtime unit coverage
 ```
 
 Key docs:
@@ -195,6 +196,7 @@ What is intentionally missing right now:
 
 These are the checks used during pre-release verification:
 - `npm run check`
+- `npm run test`
 - `npm run verify:demo`
 - `npm run replay:request -- demo/requests/list-queue.json`
 - `npm run replay:request -- demo/requests/create-note-and-queue.json`

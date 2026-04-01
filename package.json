@@ -15,7 +15,8 @@
     "start": "node dist/src/server.js",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
-    "check": "npm run typecheck && npm run lint && npm run build",
+    "test": "vitest run",
+    "check": "npm run typecheck && npm run lint && npm run test && npm run build",
     "token": "tsx scripts/generate-token.ts",
     "verify:demo": "tsx scripts/verify-demo-http.ts",
     "replay:request": "tsx scripts/replay-request.ts"
@@ -36,6 +37,7 @@
     "globals": "16.5.0",
     "tsx": "4.21.0",
     "typescript": "5.9.3",
-    "typescript-eslint": "8.57.2"
+    "typescript-eslint": "8.57.2",
+    "vitest": "4.1.2"
   }
 }
