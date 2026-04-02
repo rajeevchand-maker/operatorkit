@@ -83,6 +83,20 @@ describe("ToolRegistry", () => {
     expect(validation).toContain("admin_only requires admin policy");
   });
 
+  it("rejects calls for unknown tools before attempting validation", () => {
+    const registry = new ToolRegistry();
+
+    const validation = registry.validateCall(
+      {
+        toolName: "missing_tool",
+        params: { title: "Launch note" },
+      },
+      "operate",
+    );
+
+    expect(validation).toBe("Unknown tool: missing_tool");
+  });
+
   it("rejects calls when parameters do not satisfy the tool schema", () => {
     const registry = new ToolRegistry();
     registry.register(createTool({ name: "schema_guard" }));
